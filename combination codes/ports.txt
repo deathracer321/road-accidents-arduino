@@ -1,0 +1,30 @@
+Ultrasonic sensor:
+VCC :  5V bread 
+GND : digital GND
+TRIG : ~3	
+Echo : digital 2
+
+
+Pressure sensor:
+18 side : 5V bread
+other side : 
+		1st : A0 analog bread
+		2nd : bread resistor GND
+
+
+
+GPS sensor : 
+VCC :  5V bread 
+GND : GND bread
+TX :  6 digital
+RX : 	5 digital
+
+
+GSM module:
+9V 0.6A separate input
+GND : Analog GND
+TX :  9 digital
+RX  : 10 digital
+
+
+
