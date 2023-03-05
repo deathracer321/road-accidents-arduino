@@ -104,7 +104,6 @@ void loop() {
           char time_string[32];
           sprintf(time_string, "Time : %02d/%02d/%02d \n", hr_val, min_val, sec_val);
           Serial.print(time_string);    
-          Serial.println("**************************************************************************************************************************");    
         }
      
 // GPS end ------------------------------------------------------------------------------------------------------------------------------------------------
@@ -127,7 +126,6 @@ void loop() {
   // Prints the distance on the Serial Monitor
   Serial.print("Distance: ");
   Serial.println(distance);
-  Serial.println("************************************************************************************************************************************");
   if(distance > 6){
 Serial.print("Distance greater than 6 triggered ");
 
@@ -160,96 +158,94 @@ Serial.print("Distance greater than 6 triggered ");
     
     // GSM start------------------------------------------------------------------------------------------------------------------------------------------
 
-    // Serial.println("HTTP get method :");
-    // Serial.print("AT\\r\\n");
-    // SIM900.println("AT"); /* Check Communication */
-    // delay(5000);
-    // ShowSerialData(); /* Print response on the serial monitor */
-    // delay(5000);
-    // /* Configure bearer profile 1 */
-    // Serial.print("AT+SAPBR=3,1,\"CONTYPE\",\"GPRS\"\\r\\n");
-    // SIM900.println("AT+SAPBR=3,1,\"CONTYPE\",\"GPRS\""); /* Connection type GPRS */
-    // delay(5000);
-    // ShowSerialData();
-    // delay(5000);
-    // Serial.print("AT+SAPBR=3,1,\"APN\",\"airtelgprs.com\"\\r\\n");
-    // SIM900.println("AT+SAPBR=3,1,\"APN\",\"airtelgprs.com\""); /* APN of the provider */
-    // delay(5000);
-    // ShowSerialData();
-    // delay(5000);
-    // Serial.print("AT+SAPBR=1,1\\r\\n");
-    // SIM900.println("AT+SAPBR=1,1"); /* Open GPRS context */
-    // delay(5000);
-    // ShowSerialData();
-    // delay(5000);
-    // Serial.print("AT+SAPBR=2,1\\r\\n");
-    // SIM900.println("AT+SAPBR=2,1"); /* Query the GPRS context */
-    // delay(5000);
-    // ShowSerialData();
-    // delay(5000);
+    Serial.println("HTTP get method :");
+    Serial.print("AT\\r\\n");
+    SIM900.println("AT"); /* Check Communication */
+    delay(5000);
+    ShowSerialData(); /* Print response on the serial monitor */
+    delay(5000);
+    /* Configure bearer profile 1 */
+    Serial.print("AT+SAPBR=3,1,\"CONTYPE\",\"GPRS\"\\r\\n");
+    SIM900.println("AT+SAPBR=3,1,\"CONTYPE\",\"GPRS\""); /* Connection type GPRS */
+    delay(5000);
+    ShowSerialData();
+    delay(5000);
+    Serial.print("AT+SAPBR=3,1,\"APN\",\"airtelgprs.com\"\\r\\n");
+    SIM900.println("AT+SAPBR=3,1,\"APN\",\"airtelgprs.com\""); /* APN of the provider */
+    delay(5000);
+    ShowSerialData();
+    delay(5000);
+    Serial.print("AT+SAPBR=1,1\\r\\n");
+    SIM900.println("AT+SAPBR=1,1"); /* Open GPRS context */
+    delay(5000);
+    ShowSerialData();
+    delay(5000);
+    Serial.print("AT+SAPBR=2,1\\r\\n");
+    SIM900.println("AT+SAPBR=2,1"); /* Query the GPRS context */
+    delay(5000);
+    ShowSerialData();
+    delay(5000);
 
-    // Serial.print("AT+HTTPINIT\\r\\n");
-    // SIM900.println("AT+HTTPINIT"); /* Initialize HTTP service */
-
-
-    // delay(5000);
-    // ShowSerialData();
-    // delay(5000);
+    Serial.print("AT+HTTPINIT\\r\\n");
+    SIM900.println("AT+HTTPINIT"); /* Initialize HTTP service */
 
 
-
-    // Serial.print("AT+HTTPPARA=\"CID\",1\\r\\n");
-    // SIM900.println("AT+HTTPPARA=\"CID\",1"); /* Set parameters for HTTP session */
-
-
-    // delay(5000);
-    // ShowSerialData();
-    // delay(5000);
+    delay(5000);
+    ShowSerialData();
+    delay(5000);
 
 
-    // Serial.print("AT+HTTPPARA=\"URL\",\"webhook.site/ad8f49d1-67dc-4d43-acd4-2e9e2269aca3?gpsLocationLat=0000&gpsLocationLon=0000&pressure=0000&groundClearance=0000&name=harish&emergencyContact=11111&address=street\"\\r\\n");
-    // SIM900.println("AT+HTTPPARA=\"URL\",\"webhook.site/ad8f49d1-67dc-4d43-acd4-2e9e2269aca3?gpsLocationLat=0000&gpsLocationLon=0000&pressure=0000&groundClearance=0000&name=harish&emergencyContact=11111&address=street\""); /* Set parameters for HTTP session */
+
+    Serial.print("AT+HTTPPARA=\"CID\",1\\r\\n");
+    SIM900.println("AT+HTTPPARA=\"CID\",1"); /* Set parameters for HTTP session */
 
 
-    // delay(5000);
-    // ShowSerialData();
-    // delay(5000);
-    // Serial.print("AT+HTTPACTION=0\\r\\n");
-    // SIM900.println("AT+HTTPACTION=0"); /* Start GET session */
-    // delay(10000);
-    // ShowSerialData();
-    // delay(10000);
-    // Serial.print("AT+HTTPREAD\\r\\n");
-    // SIM900.println("AT+HTTPREAD"); /* Read data from HTTP server */
-    // delay(8000);
-    // ShowSerialData();
-    // delay(8000);
-    // Serial.print("AT+HTTPTERM\\r\\n");
-    // SIM900.println("AT+HTTPTERM"); /* Terminate HTTP service */
-    // delay(5000);
-    // ShowSerialData();
-    // delay(5000);
-    // Serial.print("AT+SAPBR=0,1\\r\\n");
-    // SIM900.println("AT+SAPBR=0,1"); /* Close GPRS context */
-    // delay(5000);
-    // ShowSerialData();
-    // delay(5000);
-    // Serial.println(" - Completed http module");
+    delay(5000);
+    ShowSerialData();
+    delay(5000);
+
+
+    Serial.print("AT+HTTPPARA=\"URL\",\"webhook.site/ad8f49d1-67dc-4d43-acd4-2e9e2269aca3?gpsLocationLat=0000&gpsLocationLon=0000&pressure=0000&groundClearance=0000&name=harish&emergencyContact=11111&address=street\"\\r\\n");
+    SIM900.println("AT+HTTPPARA=\"URL\",\"webhook.site/ad8f49d1-67dc-4d43-acd4-2e9e2269aca3?gpsLocationLat=0000&gpsLocationLon=0000&pressure=0000&groundClearance=0000&name=harish&emergencyContact=11111&address=street\""); /* Set parameters for HTTP session */
+
+
+    delay(5000);
+    ShowSerialData();
+    delay(5000);
+    Serial.print("AT+HTTPACTION=0\\r\\n");
+    SIM900.println("AT+HTTPACTION=0"); /* Start GET session */
+    delay(10000);
+    ShowSerialData();
+    delay(10000);
+    Serial.print("AT+HTTPREAD\\r\\n");
+    SIM900.println("AT+HTTPREAD"); /* Read data from HTTP server */
+    delay(8000);
+    ShowSerialData();
+    delay(8000);
+    Serial.print("AT+HTTPTERM\\r\\n");
+    SIM900.println("AT+HTTPTERM"); /* Terminate HTTP service */
+    delay(5000);
+    ShowSerialData();
+    delay(5000);
+    Serial.print("AT+SAPBR=0,1\\r\\n");
+    SIM900.println("AT+SAPBR=0,1"); /* Close GPRS context */
+    delay(5000);
+    ShowSerialData();
+    delay(5000);
+    Serial.println(" - Completed http module");
 
   // GSM end--------------------------------------------------------------------------------------------------------------------------------------------
-    Serial.println("*********************************************************GSM end**********************************************************************");
+    
   
   }
   delay(1000);
 
 //pressure end------------------------------------------------------------------------------------------------------------------------------------------
-    Serial.println("*********************************************************Pressure end**********************************************************************");
 
   }
 
   // US End---------------------------------------------------------------------------------------------------------------------------------------------
 delay(1000);
-    Serial.println("*********************************************************US end**********************************************************************");
  
 }
 
