@@ -7,6 +7,8 @@ void setup() {
 }
 
 void loop() {
+
+  String temp = "vignesh";
   Serial.println("HTTP get method :");
   Serial.print("AT\\r\\n");
   SIM900.println("AT"); /* Check Communication */
@@ -58,8 +60,10 @@ void loop() {
   delay(5000);
 
 
-  Serial.print("AT+HTTPPARA=\"URL\",\"webhook.site/ad8f49d1-67dc-4d43-acd4-2e9e2269aca3?gpsLocationLat=1111&gpsLocationLon=0000&pressure=0000&groundClearance=22222\"\\r\\n");
-  SIM900.println("AT+HTTPPARA=\"URL\",\"webhook.site/ad8f49d1-67dc-4d43-acd4-2e9e2269aca3?gpsLocationLat=1111&gpsLocationLon=0000&pressure=0000&groundClearance=22222\""); /* Set parameters for HTTP session */
+  
+  // Serial.print("AT+HTTPPARA=\"URL\",\"webhook.site/ad8f49d1-67dc-4d43-acd4-2e9e2269aca3?gpsLocationLat=0000&gpsLocationLon=0000&pressure=0000&groundClearance=0000&name=harish&emergencyContact=11111&address=street\"\\r\\n");
+  Serial.print("AT+HTTPPARA=\"URL\",\"webhook.site/ad8f49d1-67dc-4d43-acd4-2e9e2269aca3?gpsLocationLat=12.945970&gpsLocationLon=79.167060&pressure=870&groundClearance=18cm&name=harish&emergencyContact=987654321&address=11street\"\\r\\n");
+  SIM900.println("AT+HTTPPARA=\"URL\",\"webhook.site/ad8f49d1-67dc-4d43-acd4-2e9e2269aca3?gpsLocationLat=12.945970&gpsLocationLon=79.167060&pressure=870&groundClearance=18cm&name=harish&emergencyContact=987654321&address=11street\""); /* Set parameters for HTTP session */
 
 
   delay(5000);
